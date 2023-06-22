@@ -19,7 +19,9 @@
         transform: translateY(0);
       }
     }
-
+    * {
+      box-sizing: border-box;
+    }
     .image-container {
       position: relative;
       height: 100vh;
@@ -107,6 +109,16 @@
 }
 
     @media (max-width: 768px) {
+
+      .section-container {
+        flex-direction: column;
+      }
+
+      .get-involved {
+        width: 100%;  /* Take up the full width */
+        margin-bottom: 20px;  /* Add some space between the sections */
+      }   
+
       .overlay .larger-font {
         font-size: 52px;
       }
