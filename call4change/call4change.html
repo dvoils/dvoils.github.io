@@ -15,18 +15,19 @@
   .overlay {
     position: absolute;
     top: 50%;
-    left: 60px; /* Adjust the left position as needed */
+    left: 20px; /* Adjust the left position as needed */
     transform: translateY(-50%);
     text-align: left;
     z-index: 1;
     color: white;
-    font-size: 24px;
+    font-size: 28px; /* Adjust the font size as needed */
+    font-family: Arial, sans-serif; /* Change the font family as needed */
   }
 
   .button-container {
-    position: absolute;
-    top: 60%; /* Adjust the top position as needed */
-    left: 60px; /* Adjust the left position as needed */
+    position: fixed;
+    bottom: 20px; /* Adjust the bottom position as needed */
+    left: 20px; /* Adjust the left position as needed */
     transform: translateY(-50%);
     text-align: left;
     z-index: 1;
@@ -38,7 +39,7 @@
     padding: 10px 20px;
     text-decoration: none;
     color: white;
-    background-color: #4CAF50;
+    background-color: #4c4faf;
     border-radius: 4px;
     font-weight: bold;
   }
@@ -46,11 +47,14 @@
   /* Media query for smaller screens */
   @media (max-width: 768px) {
     .overlay {
-      font-size: 24px;
+      font-size: 22px; /* Adjust the font size as needed */
     }
 
     .button-container {
-      top: 50%; /* Adjust the top position as needed */
+      position: fixed;
+      bottom: 20px; /* Adjust the bottom position as needed */
+      left: 20px; /* Adjust the left position as needed */
+      transform: translateY(-50%);
     }
 
     .button-container a.button {
