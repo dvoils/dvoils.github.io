@@ -6,23 +6,14 @@
   <title>Your Page Title</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
   <style>
-    .my-element {
-      animation: backInDown 2s;
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-    }
     @keyframes backInDown {
       0% {
         opacity: 0;
-        transform: translateY(-200px);
+        transform: translateY(-20px);
       }
       60% {
         opacity: 1;
-        transform: translateY(30px);
-      }
-      80% {
-        transform: translateY(-10px);
+        transform: translateY(3px);
       }
       100% {
         transform: translateY(0);
@@ -36,12 +27,15 @@
     }
 
     .image-container img {
+      animation: backInDown 2s; /* Apply the animation here */
       position: absolute;
-      width: auto;  /* Adjust width */
-      height: 100%; /* Adjust height */
-      object-fit: cover; /* Adjust object-fit */
-      left: 50%; /* Center the image */
-      transform: translateX(-50%); /* Ensure it remains centered */
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+      left: 0;
+      right: 0; /* Add right */
+      margin-left: auto; /* Add margin-left */
+      margin-right: auto; /* Add margin-right */
     }
 
     .overlay {
@@ -80,19 +74,19 @@
     /* Media query for smaller screens */
     @media (max-width: 768px) {
       .overlay {
-        font-size: 32px; /* Slightly decrease font size for mobile view */
+        font-size: 32px;
       }
 
       .button-container a.button {
-        padding: 20px 30px; /* Slightly decrease button size for mobile view */
-        font-size: 24px; /* Slightly decrease font size for mobile view */
+        padding: 20px 30px;
+        font-size: 24px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Your Header Here</h1> <!-- Header Tag -->
+    
   </header>
 
   <div class="image-container">
