@@ -1,70 +1,83 @@
-<style>
-  .image-container {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-  }
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Viewport Meta Tag -->
+  <title>Your Page Title</title>
+  <style>
+    .image-container {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-  .image-container img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    .image-container img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  .overlay {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    text-align: left;
-    z-index: 1;
-    color: white;
-    font-size: 28px;
-    font-family: Arial, sans-serif;
-  }
-
-  .button-container {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    transform: translateY(-50%);
-    text-align: left;
-    z-index: 1;
-  }
-
-  .button-container a.button {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: white;
-    background-color: #4CAF50;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 16px;
-  }
-
-  /* Media query for smaller screens */
-  @media (max-width: 768px) {
     .overlay {
-      font-size: 36px; /* Further increase font size */
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      text-align: left;
+      z-index: 1;
+      color: white;
+      font-size: 28px;
+      font-family: Arial, sans-serif;
+    }
+
+    .button-container {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      transform: translateY(-50%);
+      text-align: left;
+      z-index: 1;
     }
 
     .button-container a.button {
-      padding: 25px 35px; /* Further increase button size */
-      font-size: 30px; /* Further increase font size */
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      background-color: #4CAF50;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 16px;
     }
-  }
-</style>
 
-<div class="image-container">
-  <img src="selfie.jpg" alt="Your Image">
-  <div class="overlay">
-    <p>Your text goes here.</p>
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
+      .overlay {
+        font-size: 32px; /* Slightly decrease font size for mobile view */
+      }
+
+      .button-container a.button {
+        padding: 20px 30px; /* Slightly decrease button size for mobile view */
+        font-size: 24px; /* Slightly decrease font size for mobile view */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Header Here</h1> <!-- Header Tag -->
+  </header>
+
+  <div class="image-container">
+    <img src="selfie.jpg" alt="Your Image">
+    <div class="overlay">
+      <p>Your text goes here.</p>
+    </div>
+    <div class="button-container">
+      <a href="link1.html" class="button">Button 1</a>
+      <a href="link2.html" class="button">Button 2</a>
+    </div>
   </div>
-  <div class="button-container">
-    <a href="link1.html" class="button">Button 1</a>
-    <a href="link2.html" class="button">Button 2</a>
-  </div>
-</div>
+</body>
+</html>
