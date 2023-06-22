@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Viewport Meta Tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Your Page Title</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
   <style>
@@ -27,27 +27,36 @@
     }
 
     .image-container img {
-      animation: backInDown 2s; /* Apply the animation here */
+      animation: backInDown 2s;
       position: absolute;
       width: auto;
       height: 100%;
       object-fit: cover;
       left: 0;
-      right: 0; /* Add right */
-      margin-left: auto; /* Add margin-left */
-      margin-right: auto; /* Add margin-right */
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .overlay {
       position: absolute;
-      top: 50%;
+      top: 40%; /* Adjusted top percentage */
       left: 20px;
       transform: translateY(-50%);
       text-align: left;
       z-index: 1;
       color: white;
-      font-size: 28px;
       font-family: Arial, sans-serif;
+    }
+
+    /* New class for larger text on top row */
+    .overlay .larger-font {
+      font-size: 42px;
+    }
+
+    /* New class for smaller text on bottom row */
+    .overlay .smaller-font {
+      font-size: 28px;
     }
 
     .button-container {
@@ -65,15 +74,18 @@
       padding: 10px 20px;
       text-decoration: none;
       color: white;
-      background-color: #4CAF50;
+      background-color: #0072C6;
       border-radius: 4px;
       font-weight: bold;
       font-size: 16px;
     }
 
-    /* Media query for smaller screens */
     @media (max-width: 768px) {
-      .overlay {
+      .overlay .larger-font {
+        font-size: 52px;
+      }
+
+      .overlay .smaller-font {
         font-size: 32px;
       }
 
@@ -92,11 +104,12 @@
   <div class="image-container">
     <img src="selfie.jpg" alt="Your Image">
     <div class="overlay">
-      <p>Your text goes here.</p>
+      <p class="larger-font">We are Call 4 Change</p> <!-- Larger font -->
+      <p class="smaller-font">Reminding us that progress is not just an ideal, but an unyielding pursuit that begins with a single step.</p> <!-- Smaller font -->
     </div>
     <div class="button-container">
-      <a href="link1.html" class="button">Button 1</a>
-      <a href="link2.html" class="button">Button 2</a>
+      <a href="link1.html" class="button">Get Involved</a>
+      <a href="link2.html" class="button">Donate</a>
     </div>
   </div>
 </body>
