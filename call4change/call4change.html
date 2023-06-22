@@ -40,7 +40,7 @@
 
     .overlay {
       position: absolute;
-      top: 40%; /* Adjusted top percentage */
+      top: 40%;
       left: 20px;
       transform: translateY(-50%);
       text-align: left;
@@ -49,21 +49,17 @@
       font-family: Arial, sans-serif;
     }
 
-    /* New class for larger text on top row */
     .overlay .larger-font {
       font-size: 42px;
     }
 
-    /* New class for smaller text on bottom row */
     .overlay .smaller-font {
       font-size: 28px;
     }
 
     .button-container {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      transform: translateY(-50%);
+      position: relative; /* Changed from fixed to relative */
+      top: 20px; /* Added top */
       text-align: left;
       z-index: 1;
     }
@@ -104,12 +100,12 @@
   <div class="image-container">
     <img src="selfie.jpg" alt="Your Image">
     <div class="overlay">
-      <p class="larger-font">We are Call 4 Change</p> <!-- Larger font -->
-      <p class="smaller-font">Reminding us that progress is not just an ideal, but an unyielding pursuit that begins with a single step.</p> <!-- Smaller font -->
-    </div>
-    <div class="button-container">
-      <a href="link1.html" class="button">Get Involved</a>
-      <a href="link2.html" class="button">Donate</a>
+      <p class="larger-font">We are Call 4 Change</p>
+      <p class="smaller-font">Reminding us that progress is not just an ideal, but an unyielding pursuit that begins with a single step.</p>
+      <div class="button-container">
+        <a href="link1.html" class="button">Get Involved</a>
+        <a href="link2.html" class="button">Donate</a>
+      </div>
     </div>
   </div>
 </body>
