@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Page with Image Animation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+  <style>
+    .my-element {
+      animation: backInDown 2s;
+      display: flex;
+      justify-content: center;
+    }
+    .my-element img {
+      width: 100vw;
+    }
+    @keyframes backInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(3px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="my-element">
+    <img src="selfie.jpg" alt="My image">
+  </div>
+</body>
+</html>
