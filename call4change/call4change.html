@@ -76,6 +76,36 @@
       font-size: 16px;
     }
 
+    .get-involved {
+  width: 33.33%;
+  float: left;
+  background-color: #0072C6;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.get-involved h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.get-involved ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.get-involved ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.get-involved ul li a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
     @media (max-width: 768px) {
       .overlay .larger-font {
         font-size: 52px;
@@ -90,6 +120,25 @@
         font-size: 24px;
       }
     }
+
+    .section-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .get-involved {
+      width: 30%;  /* reduced from 33.33% to leave some gap */
+      /* removed the float property */
+      background-color: #f0f2f5;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex; /* Added */
+      flex-direction: column; /* Added */
+      flex: 1; /* Added */
+    }
+
+
+
   </style>
 </head>
 <body>
@@ -108,5 +157,25 @@
       </div>
     </div>
   </div>
+
+  <div class="section-container">
+    <section class="get-involved">
+      <h2>Get Involved</h2>
+      <ul>
+        <li><a href="#">Volunteer</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Help Us Grow</a></li>
+      </ul>
+    </section>
+    <section class="get-involved">
+      <h2>About Us</h2>
+      <p>We are a group of people who are passionate about making a difference in the world. We believe that everyone has something to offer, and we want to help people connect with their passions and make a positive impact.</p>
+    </section>
+    <section class="get-involved">
+      <h2>Contact Us</h2>
+      <p>You can contact us by email at <a href="mailto:info@example.com">info@example.com</a> or by phone at 1-800-555-1212.</p>
+    </section>
+  </div>
+  
 </body>
 </html>
