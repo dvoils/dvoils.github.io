@@ -1,128 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Danny's Homepage</title>
   <style>
-    /* CSS styles */
-    body {
-      margin: 0;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-      background-color: #131313;
-      color: #e8dede;
+    :root{
+      --bg:#131313; --card:#2f2f2f; --ink:#e8dede; --muted:#cdcdd2;
+      --accent:#2196f3; --chip:#424244; --btn:#7f86ae; --ink-weak:#d4caca;
+      --radius:12px;
     }
-    
-    h1 {
-      font-size: 24px;
-      margin-top: 0;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #d4caca;
+    *{box-sizing:border-box}
+    body{
+      margin:0; padding:24px; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg); color:var(--ink); line-height:1.55;
     }
-    
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
+    .container{max-width:900px; margin:0 auto}
+    h1{font-size:28px; margin:0 0 18px; text-align:center; color:var(--ink-weak)}
+    .grid{display:grid; gap:20px}
+    .section{
+      background:var(--card); color:var(--muted); padding:20px; border-radius:var(--radius);
+      box-shadow:0 2px 8px rgba(0,0,0,.25);
     }
-    
-    .section {
-      background-color: #2f2f2f;
-      color: #cdcdd2;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    .header{
+      background:var(--accent); color:#fff; padding:10px 14px; margin:-20px -20px 16px;
+      border-radius:calc(var(--radius) - 2px) calc(var(--radius) - 2px) 8px 8px; font-weight:600
     }
-    
-    .header {
-        background-color: #2196f3;
-      padding: 10px;
-      margin-bottom: 20px;
-      color: #fff;
-      border-radius: 5px;
-      text-align: center;
-      font-size: 20px;
+    .box{background:var(--chip); padding:14px; border-radius:10px; margin-bottom:12px}
+    .button{
+      display:inline-block; text-decoration:none; background:var(--btn); color:#fff;
+      padding:10px 14px; border-radius:8px; font-weight:600
     }
-    
-    .box {
-      background-color: #424244;
-      padding: 20px;
-      margin-bottom: 20px;
-      color: #fff;
-      border-radius: 5px;
+    /* --- Tracker Card --- */
+    .tracker{
+      display:flex; flex-direction:column; gap:14px; background:linear-gradient(180deg,#2a2a2a,#232323);
+      border:1px solid #3b3b3b; border-radius:var(--radius); padding:18px;
     }
-    
-    .highlight {
-      background-color: #2196f3;
-      color: #fff;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      text-align: center;
-      font-size: 18px;
+    .tracker h2{margin:0; font-size:20px; display:flex; align-items:center; gap:10px}
+    .cta-row{display:flex; flex-wrap:wrap; gap:10px}
+    .cta{display:inline-flex; align-items:center; gap:8px; text-decoration:none; padding:10px 14px;
+      border-radius:10px; font-weight:700; background:var(--accent); color:#fff}
+    .ghost{background:transparent; border:1px solid #3b3b3b; color:#eaeaea}
+    .bar{
+      position:relative; height:14px; border-radius:999px; overflow:hidden; background:#1a1a1a;
+      outline:1px solid #333;
     }
-    
-    .button {
-      text-decoration: none;
-      background-color: #7f86ae;
-      color: #fff;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      text-align: center;
-      font-size: 18px;
+    .bar::before{content:''; position:absolute; inset:0 50% 0 0; background:#341b1b}
+    .bar::after{content:''; position:absolute; inset:0 0 0 50%; background:#1d2f1d}
+    .needle{
+      position:absolute; top:0; bottom:0; width:3px; background:#fff; left:50%;
+      box-shadow:0 0 0 1px #000;
+      transform:translateX(20%); /* visual placeholder */
     }
-    
-    @media screen and (max-width: 480px) {
-      .container {
-        padding: 10px;
-      }
-      
-      .section {
-        padding: 10px;
-      }
-      
-      .header {
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-      
-      .highlight {
-        font-size: 16px;
-        margin-bottom: 10px;
-      }
-
-      .button {
-  display: inline-block;
-}
-
-
-
-
+    /* Embed */
+    .embed{border:1px solid #3b3b3b; border-radius:12px; overflow:hidden; background:#0e0e0e}
+    .embed iframe{width:100%; height:70vh; border:0; display:block; background:#fff}
+    details{border:1px solid #3b3b3b; border-radius:10px; padding:10px 12px; background:#1c1c1c}
+    details[open]{background:#1a1a1a}
+    summary{cursor:pointer; font-weight:600; color:#ddd}
+    .muted{color:#a9a9ad; font-size:14px}
+    .links{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px}
+    @media (max-width:480px){
+      body{padding:16px}
+      h1{font-size:22px}
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container grid">
     <h1>Welcome to Danny's Homepage</h1>
-    
-    <div class="section">
-        <div class="header">Bio</div>
-            <p>I am a highly accomplished professional with expertise in computer engineering, software development, data science, and data engineering. 
-            My extensive experience spans across diverse environments, including startups, corporations, military, and academia. </p> 
 
-            <p> I possess a wide-ranging technical background encompassing areas such as computer architecture, neural networks, deep learning, cloud computing, signal processing, and big data.</p>
-           
-            <div style="height: 5px;"> </div>
-
- 
-            <div class="box" > <a href="https://github.com/dvoils" class="button" > Github </a>  </div>
-            <div class="box" > <a href="https://gist.github.com/dvoils" class="button" > Github Gist </a>  </div>
-            <div class="box" > <a href="https://huggingface.co/dvoils" class="button"  > Hugging Face </a>  </div>
-
+    <!-- Democracy Action Tracker promo -->
+    <section class="tracker">
+      <h2>Democracy Action Tracker <span class="muted">— Live index</span></h2>
+      <div class="bar" aria-hidden="true"><div class="needle"></div></div>
+      <p class="muted">Follow the live “Autocracy ↔ Democracy” index and the events that move it.</p>
+      <div class="cta-row">
+        <!-- Open tracker in new tab -->
+        <a class="cta" href="https://dvoils.github.io/democracy-action-tracker/" target="_blank" rel="noopener">
+          Open the Tracker
+        </a>
+        <!-- Link to repo (optional) -->
+        <a class="cta ghost" href="https://github.com/dvoils/democracy-action-tracker" target="_blank" rel="noopener">
+          View Source on GitHub
+        </a>
+      </div>
+      <details>
+        <summary>Preview inside this page (embed)</summary>
+        <div class="embed" role="region" aria-label="Embedded Democracy Action Tracker">
+          <iframe
+            src="https://dvoils.github.io/democracy-action-tracker/"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            title="Democracy Action Tracker"
+          ></iframe>
         </div>
- 
+      </details>
+    </section>
 
+    <!-- Bio -->
+    <section class="section">
+      <div class="header">Bio</div>
+      <p>
+        I am a highly accomplished professional with expertise in computer engineering, software development,
+        data science, and data engineering. My experience spans startups, corporations, military, and academia.
+      </p>
+      <p>
+        I work across computer architecture, neural networks/deep learning, cloud computing, signal processing,
+        and big data.
+      </p>
+
+      <div class="links" style="margin-top:14px">
+        <div class="box"><a class="button" href="https://github.com/dvoils" target="_blank" rel="noopener">GitHub</a></div>
+        <div class="box"><a class="button" href="https://gist.github.com/dvoils" target="_blank" rel="noopener">GitHub Gist</a></div>
+        <div class="box"><a class="button" href="https://huggingface.co/dvoils" target="_blank" rel="noopener">Hugging Face</a></div>
+      </div>
+    </section>
   </div>
 </body>
 </html>
