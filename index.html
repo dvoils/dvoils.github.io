@@ -75,47 +75,63 @@
       margin-bottom: 0;
     }
 
-    /* Project entries */
+    /* Subtopics */
 
-    .project {
-      padding: 0 0 16px;
-      margin-bottom: 16px;
-      border-bottom: 1px solid #424244;
+    .subtopic {
+      margin-bottom: 24px;
     }
 
-    .project:last-child {
-      padding-bottom: 0;
+    .subtopic:last-child {
       margin-bottom: 0;
-      border-bottom: none;
     }
 
-    .project h3 {
-      margin: 0 0 4px;
-      font-size: 18px;
-      font-weight: normal;
+    .subtopic-button {
+      display: block;
+      width: 100%;
+      padding: 10px 16px;
+      margin-bottom: 10px;
+
+      background-color: #7f86ae;
+      color: #fff;
+      border-radius: 5px;
+
+      font-size: 17px;
+      line-height: 1.4;
+      text-align: center;
+      text-decoration: none;
+
+      transition: filter 0.15s ease;
     }
 
-    .project p {
+    .subtopic-button:hover {
+      filter: brightness(1.15);
+      text-decoration: none;
+    }
+
+    .subtopic-button:active {
+      filter: brightness(0.95);
+    }
+
+    .subtopic p {
       margin: 0;
+      padding: 0 4px;
       font-size: 15px;
     }
 
-    /* Text links */
+    /* Non-clickable placeholders */
 
-    a {
-      color: #aab1d6;
+    .placeholder-button {
+      background-color: #7f86ae;
+      color: #fff;
+      opacity: 0.65;
+      cursor: default;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .placeholder-button:hover {
+      filter: none;
     }
 
-    a:focus-visible {
-      outline: 2px solid #fff;
-      outline-offset: 3px;
-    }
-
-    /* Button links */
+    /* External links */
 
     .links {
       display: flex;
@@ -129,13 +145,16 @@
       justify-content: center;
       min-height: 48px;
       padding: 12px 18px;
+
       background-color: #7f86ae;
       color: #fff;
       border-radius: 5px;
+
       font-size: 18px;
       line-height: 1.4;
       text-align: center;
       text-decoration: none;
+
       transition: filter 0.15s ease;
     }
 
@@ -148,24 +167,11 @@
       filter: brightness(0.95);
     }
 
-    /* Secondary navigation */
+    /* Accessibility */
 
-    .archive-list {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .archive-list li {
-      margin-bottom: 10px;
-    }
-
-    .archive-list li:last-child {
-      margin-bottom: 0;
-    }
-
-    .placeholder {
-      color: #999;
-      font-size: 14px;
+    a:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
     }
 
     /* Footer */
@@ -198,8 +204,8 @@
         margin-bottom: 16px;
       }
 
-      .project h3 {
-        font-size: 17px;
+      .subtopic-button {
+        font-size: 16px;
       }
 
       .button {
@@ -208,7 +214,8 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .button {
+      .button,
+      .subtopic-button {
         transition: none;
       }
     }
@@ -239,116 +246,161 @@
       </p>
     </section>
 
-    <!-- Current projects -->
+    <!-- Currently Exploring -->
 
     <section class="section" aria-labelledby="current-heading">
       <h2 id="current-heading">Currently Exploring</h2>
 
-      <div class="project">
-        <h3>
-          <a href="https://gitlab.com/dvoils/synth-flow">
-            Synth Flow
-          </a>
-        </h3>
+      <div class="subtopic">
+        <a class="subtopic-button"
+           href="https://gitlab.com/dvoils/synth-flow">
+          Synth Flow
+        </a>
         <p>
-          Building a programmable software synthesizer and
-          experimenting with digital signal processing,
-          sound synthesis, and musical composition.
+          A programmable software synthesizer for exploring
+          digital signal processing, sound synthesis, and
+          musical composition. Built around flexible synthesis
+          graphs and reusable instrument patches.
         </p>
       </div>
 
-      <div class="project">
-        <h3>
-          <a href="https://github.com/dvoils/spikingnn">
-            Spiking Neural Networks
-          </a>
-        </h3>
+      <div class="subtopic">
+        <a class="subtopic-button"
+           href="https://github.com/dvoils/spikingnn">
+          Spiking Neural Networks
+        </a>
         <p>
-          Exploring biologically inspired neural computation,
-          spiking neuron models, and neural simulation in C++.
+          Experiments in biologically inspired neural
+          computation, spiking neuron models, and neural
+          simulation using C++.
         </p>
       </div>
 
-      <div class="project">
-        <h3>
-          <a href="https://gitlab.com/dvoils/machine-world">
-            Machine World
-          </a>
-        </h3>
+      <div class="subtopic">
+        <a class="subtopic-button"
+           href="https://gitlab.com/dvoils/machine-world">
+          Machine World
+        </a>
         <p>
-          Developing a science-fiction universe exploring
-          artificial intelligence, machine civilization,
-          and the future of humanity.
+          A science-fiction universe exploring artificial
+          intelligence, machine civilization, and humanity's
+          future among intelligent machines.
         </p>
       </div>
 
-      <div class="project">
-        <h3>
-          <a href="https://github.com/dvoils/neural-network-experiments">
-            Neural Network Experiments
-          </a>
-        </h3>
+      <div class="subtopic">
+        <a class="subtopic-button"
+           href="https://github.com/dvoils/neural-network-experiments">
+          Neural Network Experiments
+        </a>
         <p>
-          Investigations into neural networks, computational
-          neuroscience, dynamical systems, and machine learning.
+          A collection of investigations into neural networks,
+          computational neuroscience, dynamical systems,
+          and machine learning.
         </p>
       </div>
     </section>
 
-    <!-- Future archives -->
+    <!-- Explore -->
 
     <section class="section" aria-labelledby="explore-heading">
       <h2 id="explore-heading">Explore</h2>
 
-      <ul class="archive-list">
-        <li>
+      <div class="subtopic">
+        <div class="subtopic-button placeholder-button">
           Projects &amp; Experiments
-          <span class="placeholder">— coming later</span>
-        </li>
-        <li>
+        </div>
+        <p>
+          A growing collection of software projects,
+          prototypes, technical investigations, and
+          experiments across different areas of computing.
+          More to come.
+        </p>
+      </div>
+
+      <div class="subtopic">
+        <div class="subtopic-button placeholder-button">
           Research Archives
-          <span class="placeholder">— coming later</span>
-        </li>
-        <li>
+        </div>
+        <p>
+          Earlier research in associative memory,
+          neuromorphic computing, spiking neural networks,
+          and unconventional computing architectures.
+          Historical materials will be added as they
+          are organized.
+        </p>
+      </div>
+
+      <div class="subtopic">
+        <div class="subtopic-button placeholder-button">
           Notes &amp; Ideas
-          <span class="placeholder">— coming later</span>
-        </li>
-      </ul>
+        </div>
+        <p>
+          Technical observations, unfinished ideas,
+          scientific curiosities, and occasional thoughts
+          about computing and technology.
+        </p>
+      </div>
     </section>
 
-    <!-- External links -->
+    <!-- Elsewhere -->
 
     <section class="section" aria-labelledby="elsewhere-heading">
       <h2 id="elsewhere-heading">Elsewhere</h2>
 
-      <nav class="links" aria-label="External sites and profiles">
-
-        <a class="button"
+      <div class="subtopic">
+        <a class="subtopic-button"
            href="https://dvoils.github.io/democracy-action-tracker/">
           Democracy Action Tracker
         </a>
+        <p>
+          An interactive resource for exploring
+          democratic participation and civic engagement.
+        </p>
+      </div>
 
-        <a class="button"
+      <div class="subtopic">
+        <a class="subtopic-button"
            href="https://github.com/dvoils">
           GitHub
         </a>
+        <p>
+          Source code, experiments, and software projects.
+        </p>
+      </div>
 
-        <a class="button"
+      <div class="subtopic">
+        <a class="subtopic-button"
            href="https://gitlab.com/dvoils">
           GitLab
         </a>
+        <p>
+          Additional software projects, development
+          repositories, and ongoing experiments.
+        </p>
+      </div>
 
-        <a class="button"
+      <div class="subtopic">
+        <a class="subtopic-button"
            href="https://gist.github.com/dvoils">
           GitHub Gists
         </a>
+        <p>
+          Small programs, code snippets, and useful
+          technical notes.
+        </p>
+      </div>
 
-        <a class="button"
+      <div class="subtopic">
+        <a class="subtopic-button"
            href="https://huggingface.co/dvoils">
           Hugging Face
         </a>
-
-      </nav>
+        <p>
+          Machine learning projects and experiments
+          involving artificial intelligence.
+        </p>
+      </div>
     </section>
 
     <footer>
