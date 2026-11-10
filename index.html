@@ -7,12 +7,14 @@
         content="width=device-width, initial-scale=1">
 
   <meta name="description"
-        content="Danny's personal homepage — computer engineering, software development, data science, and technical projects.">
+        content="Danny's personal homepage. Exploring computing,
+                 artificial intelligence, software, music,
+                 and science.">
 
   <title>Danny's Homepage</title>
 
   <style>
-    /* Base styles */
+    /* Base */
 
     * {
       box-sizing: border-box;
@@ -34,8 +36,6 @@
       margin: 0 auto;
     }
 
-    /* Page title */
-
     h1 {
       margin: 0 0 24px;
       color: #d4caca;
@@ -44,7 +44,7 @@
       text-align: center;
     }
 
-    /* Content sections */
+    /* Sections */
 
     .section {
       padding: 24px;
@@ -71,49 +71,113 @@
       margin: 0 0 16px;
     }
 
-    /* Navigation links */
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Project entries */
+
+    .project {
+      padding: 0 0 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #424244;
+    }
+
+    .project:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .project h3 {
+      margin: 0 0 4px;
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    .project p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    /* Text links */
+
+    a {
+      color: #aab1d6;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+
+    /* Button links */
 
     .links {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-top: 24px;
     }
 
     .button {
       display: flex;
       align-items: center;
       justify-content: center;
-
       min-height: 48px;
       padding: 12px 18px;
-
       background-color: #7f86ae;
       color: #fff;
       border-radius: 5px;
-
       font-size: 18px;
       line-height: 1.4;
       text-align: center;
       text-decoration: none;
-
       transition: filter 0.15s ease;
     }
 
     .button:hover {
       filter: brightness(1.15);
-    }
-
-    .button:focus-visible {
-      outline: 2px solid #fff;
-      outline-offset: 3px;
+      text-decoration: none;
     }
 
     .button:active {
       filter: brightness(0.95);
     }
 
-    /* Mobile layout */
+    /* Secondary navigation */
+
+    .archive-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .archive-list li {
+      margin-bottom: 10px;
+    }
+
+    .archive-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .placeholder {
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* Footer */
+
+    footer {
+      margin-top: 24px;
+      color: #999;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* Mobile */
 
     @media screen and (max-width: 480px) {
       body {
@@ -134,16 +198,14 @@
         margin-bottom: 16px;
       }
 
-      .links {
-        margin-top: 20px;
+      .project h3 {
+        font-size: 17px;
       }
 
       .button {
         font-size: 16px;
       }
     }
-
-    /* Accessibility */
 
     @media (prefers-reduced-motion: reduce) {
       .button {
@@ -158,26 +220,108 @@
 
     <h1>Welcome to Danny's Homepage</h1>
 
-    <section class="section" aria-labelledby="bio-heading">
+    <!-- About -->
 
-      <h2 id="bio-heading">Bio</h2>
+    <section class="section" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
 
       <p>
-        I am a highly accomplished professional with expertise
-        in computer engineering, software development, data
-        science, and data engineering. My extensive experience
-        spans across diverse environments, including startups,
-        corporations, military, and academia.
+        I'm an engineer with a lifelong interest in computing,
+        science, and technology. My work has taken me from
+        microprocessor design and experimental neural computing
+        to distributed software systems, artificial intelligence,
+        and large-scale data engineering.
       </p>
 
       <p>
-        I possess a wide-ranging technical background
-        encompassing areas such as computer architecture,
-        neural networks, deep learning, cloud computing,
-        signal processing, and big data.
+        I enjoy exploring ideas, building things, and
+        understanding how complex systems work.
       </p>
+    </section>
 
-      <nav class="links" aria-label="Projects and profiles">
+    <!-- Current projects -->
+
+    <section class="section" aria-labelledby="current-heading">
+      <h2 id="current-heading">Currently Exploring</h2>
+
+      <div class="project">
+        <h3>
+          <a href="https://gitlab.com/dvoils/synth-flow">
+            Synth Flow
+          </a>
+        </h3>
+        <p>
+          Building a programmable software synthesizer and
+          experimenting with digital signal processing,
+          sound synthesis, and musical composition.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>
+          <a href="https://github.com/dvoils/spikingnn">
+            Spiking Neural Networks
+          </a>
+        </h3>
+        <p>
+          Exploring biologically inspired neural computation,
+          spiking neuron models, and neural simulation in C++.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>
+          <a href="https://gitlab.com/dvoils/machine-world">
+            Machine World
+          </a>
+        </h3>
+        <p>
+          Developing a science-fiction universe exploring
+          artificial intelligence, machine civilization,
+          and the future of humanity.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>
+          <a href="https://github.com/dvoils/neural-network-experiments">
+            Neural Network Experiments
+          </a>
+        </h3>
+        <p>
+          Investigations into neural networks, computational
+          neuroscience, dynamical systems, and machine learning.
+        </p>
+      </div>
+    </section>
+
+    <!-- Future archives -->
+
+    <section class="section" aria-labelledby="explore-heading">
+      <h2 id="explore-heading">Explore</h2>
+
+      <ul class="archive-list">
+        <li>
+          Projects &amp; Experiments
+          <span class="placeholder">— coming later</span>
+        </li>
+        <li>
+          Research Archives
+          <span class="placeholder">— coming later</span>
+        </li>
+        <li>
+          Notes &amp; Ideas
+          <span class="placeholder">— coming later</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- External links -->
+
+    <section class="section" aria-labelledby="elsewhere-heading">
+      <h2 id="elsewhere-heading">Elsewhere</h2>
+
+      <nav class="links" aria-label="External sites and profiles">
 
         <a class="button"
            href="https://dvoils.github.io/democracy-action-tracker/">
@@ -187,6 +331,11 @@
         <a class="button"
            href="https://github.com/dvoils">
           GitHub
+        </a>
+
+        <a class="button"
+           href="https://gitlab.com/dvoils">
+          GitLab
         </a>
 
         <a class="button"
@@ -200,8 +349,11 @@
         </a>
 
       </nav>
-
     </section>
+
+    <footer>
+      Last updated: November 2026
+    </footer>
 
   </main>
 </body>
